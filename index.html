@@ -6,216 +6,248 @@
 <title>Демо-сайты салонов — Narodniy Team</title>
 <meta name="description" content="Демонстрационные сайты салонов красоты от студии Narodniy Team. Каждый собран на реальных данных заказчика: его фотографии, его прайс, его отзывы.">
 <meta name="robots" content="noindex">
-<meta name="theme-color" content="#070708">
+<meta name="theme-color" content="#1B1714">
 <meta property="og:title" content="Демо-сайты салонов — Narodniy Team">
-<meta property="og:description" content="Сайты салонов красоты на реальных данных заказчиков. Ни одной стоковой картинки и ни одной выдуманной цены.">
+<meta property="og:description" content="Три салона, у которых не было сайта. 256 их фотографий, 125 позиций прайса, 34 отзыва дословно.">
 <meta property="og:type" content="website">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23FAFAFA'/%3E%3Cpath d='M10 23V9l12 14V9' stroke='%23070708' stroke-width='2.6' fill='none' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%231B1714'/%3E%3Cpath d='M10 23V9l12 14V9' stroke='%23F1EDE6' stroke-width='2.6' fill='none' stroke-linejoin='round'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Forum&family=Onest:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-/* Оформление повторяет narodniy-team.ru: тот же почти чёрный фон,
-   Inter, крупные заглавные с обводкой у части слов и карточки
-   на полупрозрачной подложке. */
+/* Витрина собрана в том же языке, что и сами демо: тёплая бумага,
+   крупная антиква в заголовках, моноширинные метки капсом, волосяные
+   линии вместо теней. Акцент у каждой карточки свой — тот, что взят
+   с фотографий её студии. */
 :root{
-  --bg:#070708;
-  --fg:250,250,250;
-  --text:rgb(var(--fg));
-  --text-2:rgba(var(--fg),.58);
-  --text-3:rgba(var(--fg),.35);
-  --card:rgba(var(--fg),.03);
-  --card-hover:rgba(var(--fg),.07);
-  --line:rgba(var(--fg),.1);
-  --line-hover:rgba(var(--fg),.35);
-  --r-md:8px; --r-lg:16px; --r-xl:24px;
-  --ease:cubic-bezier(.16,1,.3,1);
-  --mono:ui-monospace,"SF Mono","Cascadia Mono",Consolas,"Liberation Mono",monospace;
+  --paper:#E8E4DC;      /* бумага — основной фон */
+  --card:#F6F3EE;       /* карточки */
+  --line:#CFC7BB;       /* разметка */
+  --ink:#1B1714;        /* текст и тёмная полоса */
+  --ink-65:#544C46;
+  --ink-40:#8A8078;
+  --light:#F1EDE6;      /* текст на тёмном */
+  --light-55:#9C9188;
+
+  --koko:#A84C57;       /* KOKO — уголёк */
+  --atelier:#2C4A66;    /* Atelier Volos — синий мел */
+  --arlett:#75172A;     /* Arlett — вишнёвый */
+
+  --disp:Forum,Georgia,serif;
+  --body:Onest,-apple-system,"Segoe UI",sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,monospace;
+  --pad:clamp(18px,5.4vw,84px);
+  --gutter:max(var(--pad),calc((100% - 1200px) / 2));
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{
-  margin:0;background:var(--bg);color:var(--text);
-  font:400 16px/1.6 Inter,-apple-system,"Segoe UI",sans-serif;
-  -webkit-font-smoothing:antialiased;overflow-x:hidden;
-}
+body{margin:0;background:var(--paper);color:var(--ink);
+     font:400 16.5px/1.62 var(--body);-webkit-font-smoothing:antialiased;overflow-x:hidden}
 a{color:inherit;text-decoration:none}
 img{display:block;max-width:100%}
-:focus-visible{outline:2px solid rgba(var(--fg),.6);outline-offset:3px;border-radius:4px}
+h1,h2,h3{margin:0;font-weight:400}
+p{margin:0 0 1em}
+:focus-visible{outline:2px solid var(--ink);outline-offset:3px;border-radius:1px}
+.band :focus-visible{outline-color:var(--light)}
 
-.wrap{max-width:1180px;margin:0 auto;padding:0 clamp(16px,4vw,40px)}
+.eyebrow{margin:0 0 15px;font:400 10.5px/1.4 var(--mono);
+         letter-spacing:.2em;text-transform:uppercase;color:var(--ink-40)}
 
-/* ─── плавающая шапка ─────────────────────────────────────── */
-.top{position:sticky;top:0;z-index:30;padding:14px 0 0;
-     background:linear-gradient(var(--bg) 62%,transparent)}
-.top__in{display:flex;align-items:center;gap:14px;
-         padding:10px 10px 10px 18px;border-radius:100px;
-         background:rgba(var(--fg),.05);border:1px solid var(--line);
-         backdrop-filter:blur(14px)}
-.brand{display:flex;align-items:center;gap:10px;margin-right:auto}
-.brand__m{width:26px;height:26px;border-radius:7px;background:var(--text);
-          display:grid;place-items:center;flex:0 0 auto}
-.brand__m svg{width:15px;height:15px}
-.brand__t{font-weight:600;font-size:15.5px;letter-spacing:-.01em}
-.top__cta{padding:10px 18px;border-radius:100px;background:var(--text);color:var(--bg);
-          font-weight:600;font-size:14px;transition:opacity .4s var(--ease)}
-.top__cta:hover{opacity:.82}
+/* ─── шапка ───────────────────────────────────────────────── */
+.top{position:sticky;top:0;z-index:30;display:flex;align-items:center;gap:16px;
+     padding:13px var(--gutter);border-bottom:1px solid var(--line);
+     background:color-mix(in srgb,var(--paper) 90%,transparent);backdrop-filter:blur(9px)}
+.mark{display:flex;align-items:baseline;gap:8px;margin-right:auto}
+.mark b{font:400 15px/1 var(--disp);letter-spacing:.14em;text-transform:uppercase}
+.mark span{font:400 9.5px/1 var(--mono);letter-spacing:.2em;text-transform:uppercase;color:var(--ink-40)}
+.top a.btn{padding:11px 17px;background:var(--ink);color:var(--light);
+           font:500 13.5px/1 var(--body);border-radius:2px;transition:background .18s}
+.top a.btn:hover{background:var(--ink-65)}
 
 /* ─── первый экран ────────────────────────────────────────── */
-.hero{padding:clamp(38px,7vw,74px) 0 clamp(30px,5vw,50px)}
-.tags{display:flex;flex-wrap:wrap;align-items:center;gap:12px 22px;margin-bottom:clamp(22px,4vw,38px)}
-.tag{font:600 11.5px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--text-3)}
-.tag--live{display:inline-flex;align-items:center;gap:9px;color:var(--text);
-           padding:9px 15px;border-radius:100px;border:1px solid var(--line);
-           background:rgba(var(--fg),.05)}
-.dot{width:7px;height:7px;border-radius:50%;background:#3ED27E;flex:0 0 auto}
-@media(prefers-reduced-motion:no-preference){
-  .dot{animation:pulse 2.4s var(--ease) infinite}
-  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
-}
+.hero{padding:clamp(36px,7vw,74px) var(--gutter) clamp(30px,5vw,52px)}
+.hero h1{font:400 clamp(2.2rem,8.4vw,4.1rem)/1.04 var(--disp);letter-spacing:-.015em;
+         max-width:17ch;margin-bottom:24px}
+.hero h1 em{font-style:normal;color:var(--ink-40)}
+.hero p{color:var(--ink-65);max-width:52ch;font-size:16.5px}
 
-.h1{margin:0;font-weight:800;letter-spacing:-.035em;line-height:.94;
-    font-size:clamp(3.1rem,13vw,8rem);text-transform:uppercase}
-.h1 .ghost{color:transparent;-webkit-text-stroke:1.5px rgba(var(--fg),.28)}
-.h1 .r{display:block;text-align:right}
-@media(max-width:640px){.h1 .r{text-align:left}}
-
-.lead{margin:clamp(26px,4vw,42px) 0 0;max-width:56ch;color:var(--text-2);font-size:clamp(15px,1.7vw,17px)}
-.lead b{color:var(--text);font-weight:500}
+.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;margin-top:clamp(28px,4vw,44px);
+       background:var(--line);border:1px solid var(--line)}
+.stats div{background:var(--paper);padding:15px 16px 14px}
+.stats dt{font:400 9.5px/1.3 var(--mono);letter-spacing:.16em;text-transform:uppercase;
+          color:var(--ink-40);margin-bottom:8px}
+.stats dd{margin:0;font:400 clamp(1.5rem,5.6vw,2rem)/1 var(--disp)}
+.stats dd small{display:block;margin-top:7px;font:400 12.5px/1.4 var(--body);color:var(--ink-65)}
 
 /* ─── карточки ────────────────────────────────────────────── */
-.grid{display:grid;gap:16px;padding:clamp(34px,5vw,58px) 0 clamp(40px,6vw,72px)}
-@media(min-width:820px){.grid{grid-template-columns:repeat(3,1fr)}}
-.card{display:flex;flex-direction:column;border-radius:var(--r-lg);overflow:hidden;
-      background:var(--card);border:1px solid var(--line);
-      transition:background .4s var(--ease),border-color .4s var(--ease),transform .4s var(--ease)}
-.card:hover{background:var(--card-hover);border-color:var(--line-hover);transform:translateY(-4px)}
-.card__img{position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
-.card__img img{width:100%;aspect-ratio:16/9;object-fit:cover;object-position:top center;
-               transition:transform .8s var(--ease)}
-.card:hover .card__img img{transform:scale(1.03)}
-.card__b{padding:20px 22px 24px;display:flex;flex-direction:column;flex:1}
-.card__c{margin:0 0 9px;font:600 10.5px/1.3 var(--mono);letter-spacing:.14em;
-         text-transform:uppercase;color:var(--text-3)}
-.card__t{margin:0 0 10px;font-weight:700;font-size:1.28rem;letter-spacing:-.025em}
-.card__d{margin:0 0 20px;color:var(--text-2);font-size:14.5px;line-height:1.62}
-.card__go{margin-top:auto;display:inline-flex;align-items:center;gap:9px;
-          font:600 12px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase}
-.card__go svg{transition:transform .4s var(--ease)}
+.works{padding:0 var(--gutter) clamp(44px,7vw,80px)}
+.grid{display:grid;gap:1px;background:var(--line);border:1px solid var(--line)}
+.card{background:var(--card);display:flex;flex-direction:column;
+      transition:background .2s}
+.card:hover{background:#FBF9F5}
+.card__i{position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
+.card__i img{width:100%;aspect-ratio:16/9;object-fit:cover;object-position:top center;
+             transition:transform .6s cubic-bezier(.22,.61,.36,1)}
+.card:hover .card__i img{transform:scale(1.03)}
+.card__tag{position:absolute;left:0;bottom:0;padding:8px 12px;color:#fff;
+           font:400 9.5px/1.3 var(--mono);letter-spacing:.12em;text-transform:uppercase}
+.card__b{padding:22px 20px 24px;display:flex;flex-direction:column;flex:1}
+.card__c{margin:0 0 10px;font:400 10px/1.3 var(--mono);letter-spacing:.16em;text-transform:uppercase}
+.card__t{font:400 1.55rem/1.05 var(--disp);letter-spacing:-.01em;margin-bottom:11px}
+.card__d{margin:0 0 20px;color:var(--ink-65);font-size:14.5px;line-height:1.6}
+.card__go{margin-top:auto;padding-top:16px;border-top:1px solid var(--line);
+          display:flex;align-items:center;justify-content:space-between;gap:10px;
+          font:400 11px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase}
+.card__go svg{transition:transform .3s cubic-bezier(.22,.61,.36,1)}
 .card:hover .card__go svg{transform:translateX(4px)}
 
-/* ─── низ ─────────────────────────────────────────────────── */
-.foot{border-top:1px solid var(--line);padding:clamp(30px,4vw,44px) 0 clamp(40px,6vw,64px);
-      display:grid;gap:22px}
-@media(min-width:760px){.foot{grid-template-columns:1.6fr 1fr;align-items:start}}
-.foot__t{margin:0 0 12px;font-weight:700;font-size:1.15rem;letter-spacing:-.02em}
-.foot p{margin:0;color:var(--text-2);font-size:14.5px;max-width:52ch}
-.foot__l{display:flex;flex-direction:column;gap:11px}
-.foot__l a{display:inline-flex;align-items:center;gap:8px;font-size:14.5px;color:var(--text-2);
-           transition:color .4s var(--ease);width:fit-content}
-.foot__l a:hover{color:var(--text)}
-.note{margin-top:26px;padding-top:22px;border-top:1px solid var(--line);
-      color:var(--text-3);font-size:12.5px;line-height:1.6;grid-column:1/-1}
+.card--koko .card__c,.card--koko .card__go{color:var(--koko)}
+.card--koko .card__tag{background:var(--koko)}
+.card--atelier .card__c,.card--atelier .card__go{color:var(--atelier)}
+.card--atelier .card__tag{background:var(--atelier)}
+.card--arlett .card__c,.card--arlett .card__go{color:var(--arlett)}
+.card--arlett .card__tag{background:var(--arlett)}
+
+/* ─── тёмная полоса ───────────────────────────────────────── */
+.band{background:var(--ink);color:var(--light);padding:clamp(44px,8vw,88px) var(--gutter)}
+.band .eyebrow{color:var(--light-55)}
+.band h2{font:400 clamp(1.7rem,6.4vw,2.6rem)/1.08 var(--disp);letter-spacing:-.015em;
+         max-width:20ch;margin-bottom:20px}
+.band p{color:var(--light-55);max-width:54ch;font-size:15.5px}
+.band b{color:var(--light);font-weight:500}
+.steps{display:grid;gap:1px;margin:clamp(28px,4vw,42px) 0 0;
+       background:rgba(156,145,136,.3);border:1px solid rgba(156,145,136,.3)}
+.steps div{background:var(--ink);padding:20px 18px 22px}
+.steps dt{font:400 9.5px/1.3 var(--mono);letter-spacing:.16em;text-transform:uppercase;
+          color:var(--light-55);margin-bottom:10px}
+.steps dd{margin:0;font-size:14.5px;line-height:1.6;color:var(--light)}
+.acts{display:flex;flex-wrap:wrap;gap:9px;margin-top:clamp(26px,4vw,38px)}
+.acts a{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:0 24px;
+        font:500 14.5px/1 var(--body);border-radius:2px;border:1px solid transparent;transition:.18s}
+.acts .solid{background:var(--light);color:var(--ink)}
+.acts .solid:hover{background:#fff}
+.acts .ghost{border-color:rgba(156,145,136,.55);color:var(--light)}
+.acts .ghost:hover{border-color:var(--light);background:rgba(241,237,230,.08)}
+
+/* ─── подвал ──────────────────────────────────────────────── */
+.foot{background:#141110;color:var(--light-55);padding:clamp(32px,5vw,54px) var(--gutter) clamp(36px,5vw,58px)}
+.foot__in{display:grid;gap:22px}
+.foot a{border-bottom:1px solid rgba(156,145,136,.4)}
+.foot a:hover{color:var(--light)}
+.foot__n{font:400 12px/1.65 var(--body);color:#6B615B;max-width:66ch}
+
+@media(min-width:660px){
+  .stats{grid-template-columns:repeat(4,1fr)}
+  .steps{grid-template-columns:repeat(3,1fr)}
+  .grid{grid-template-columns:repeat(3,1fr)}
+  .foot__in{grid-template-columns:1.4fr 1fr;align-items:start}
+}
+@media(prefers-reduced-motion:reduce){*{transition-duration:.01ms!important}}
 </style>
 </head>
 <body>
 
 <header class="top">
-  <div class="wrap">
-    <div class="top__in">
-      <a class="brand" href="https://narodniy-team.ru">
-        <span class="brand__m" aria-hidden="true">
-          <svg viewBox="0 0 32 32" fill="none"><path d="M10 23V9l12 14V9" stroke="#070708" stroke-width="3.2" stroke-linejoin="round"/></svg>
-        </span>
-        <span class="brand__t">Narodniy Team</span>
-      </a>
-      <a class="top__cta" href="https://narodniy-team.ru">На сайт студии</a>
-    </div>
-  </div>
+  <a class="mark" href="https://narodniy-team.ru"><b>Narodniy</b><span>Team</span></a>
+  <a class="btn" href="https://narodniy-team.ru">На сайт студии</a>
 </header>
 
 <main>
   <section class="hero">
-    <div class="wrap">
-      <div class="tags">
-        <span class="tag tag--live"><span class="dot" aria-hidden="true"></span>3 демо готовы</span>
-        <span class="tag">Салоны красоты</span>
-        <span class="tag">Реальные данные</span>
-      </div>
-
-      <h1 class="h1">Демо <span class="ghost">сайты</span><span class="r">салонов</span></h1>
-
-      <p class="lead">
-        Каждый собран на данных самого заказчика: <b>его фотографии, его прайс, его отзывы</b>.
-        Ни одной стоковой картинки и ни одной выдуманной цены.
-      </p>
-      <p class="lead">
-        Это черновики — на них показываем владельцу, как может выглядеть сайт студии,
-        прежде чем он что-то решит.
-      </p>
-    </div>
+    <p class="eyebrow">Демо-сайты · салоны красоты</p>
+    <h1>Три салона, у которых <em>не было сайта</em></h1>
+    <p>
+      Каждый собран на данных самого заказчика: его фотографии, его прайс, его отзывы.
+      Ни одной стоковой картинки и ни одной выдуманной цены — всё выкачано из открытой
+      карточки студии на Яндекс Картах и разобрано вручную.
+    </p>
+    <dl class="stats">
+      <div><dt>Студии</dt><dd>3<small>Москва, Сочи, Воронеж</small></dd></div>
+      <div><dt>Фотографии</dt><dd>256<small>Их собственные, в оригинале</small></dd></div>
+      <div><dt>Прайс</dt><dd>125<small>Позиций с ценами и временем</small></dd></div>
+      <div><dt>Отзывы</dt><dd>34<small>Дословно, без правок</small></dd></div>
+    </dl>
   </section>
 
-  <section class="wrap">
+  <section class="works">
     <div class="grid">
 
-      <a class="card" href="arlett/">
-        <span class="card__img"><img src="arlett/docs/preview.png" alt="Первый экран сайта Arlett" loading="lazy"></span>
+      <a class="card card--arlett" href="arlett/">
+        <span class="card__i">
+          <img src="arlett/docs/preview.png" alt="Первый экран сайта Arlett" loading="lazy">
+          <span class="card__tag">Карта зон</span>
+        </span>
         <span class="card__b">
           <span class="card__c">Воронеж · косметология</span>
           <h2 class="card__t">Arlett</h2>
-          <span class="card__d">Карта зон лазерной эпиляции: отмечаете участки на схеме — видите стоимость и время приёма. Комплекты студии подставляются, только когда выходят дешевле.</span>
-          <span class="card__go">Открыть
-            <svg width="14" height="10" viewBox="0 0 14 10" fill="none" aria-hidden="true"><path d="M1 5h11M8.5 1.5 12 5 8.5 8.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span class="card__d">Эпиляция считается по зонам, их семнадцать, и сложить сумму до визита невозможно. На сайте схема тела: отмечаете участки — видите стоимость и время приёма. Комплекты студии подставляются, только когда выходят дешевле.</span>
+          <span class="card__go">Смотреть
+            <svg width="15" height="10" viewBox="0 0 15 10" fill="none" aria-hidden="true"><path d="M0 5h13M9.5 1.5 13 5l-3.5 3.5" stroke="currentColor" stroke-width="1.4"/></svg>
           </span>
         </span>
       </a>
 
-      <a class="card" href="atelier/">
-        <span class="card__img"><img src="atelier/docs/preview.png" alt="Первый экран сайта Atelier Volos" loading="lazy"></span>
+      <a class="card card--atelier" href="atelier/">
+        <span class="card__i">
+          <img src="atelier/docs/preview.png" alt="Первый экран сайта Atelier Volos" loading="lazy">
+          <span class="card__tag">Сантиметровая лента</span>
+        </span>
         <span class="card__b">
           <span class="card__c">Сочи · наращивание волос</span>
           <h2 class="card__t">Atelier Volos</h2>
-          <span class="card__d">Расчёт по сантиметровой ленте: длина среза, вес волос и работа мастера складываются в сумму за визит и уходят в WhatsApp одной кнопкой.</span>
-          <span class="card__go">Открыть
-            <svg width="14" height="10" viewBox="0 0 14 10" fill="none" aria-hidden="true"><path d="M1 5h11M8.5 1.5 12 5 8.5 8.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span class="card__d">Здесь две суммы: волосы продаются за 100 грамм с ценой по длине среза, а работа мастера — за прядь. Сайт складывает обе, длина выбирается лентой с настоящей разметкой, готовый расчёт уходит в WhatsApp одной кнопкой.</span>
+          <span class="card__go">Смотреть
+            <svg width="15" height="10" viewBox="0 0 15 10" fill="none" aria-hidden="true"><path d="M0 5h13M9.5 1.5 13 5l-3.5 3.5" stroke="currentColor" stroke-width="1.4"/></svg>
           </span>
         </span>
       </a>
 
-      <a class="card" href="koko/">
-        <span class="card__img"><img src="koko/docs/preview.png" alt="Первый экран сайта KOKO Studio" loading="lazy"></span>
+      <a class="card card--koko" href="koko/">
+        <span class="card__i">
+          <img src="koko/docs/preview.png" alt="Первый экран сайта KOKO Studio" loading="lazy">
+          <span class="card__tag">Шкала объёма</span>
+        </span>
         <span class="card__b">
           <span class="card__c">Москва · брови и ресницы</span>
           <h2 class="card__t">KOKO Studio</h2>
-          <span class="card__d">Шкала объёма 1D–5D: ползунок рисует, сколько наращённых ресниц крепится на одну свою. Онлайн-запись в рабочем расписании студии.</span>
-          <span class="card__go">Открыть
-            <svg width="14" height="10" viewBox="0 0 14 10" fill="none" aria-hidden="true"><path d="M1 5h11M8.5 1.5 12 5 8.5 8.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span class="card__d">«D» в названии объёма — это сколько наращённых ресниц крепится на одну свою. Ползунок рисует ровно это, схема строится на лету. Онлайн-запись открывает рабочее расписание студии прямо на странице.</span>
+          <span class="card__go">Смотреть
+            <svg width="15" height="10" viewBox="0 0 15 10" fill="none" aria-hidden="true"><path d="M0 5h13M9.5 1.5 13 5l-3.5 3.5" stroke="currentColor" stroke-width="1.4"/></svg>
           </span>
         </span>
       </a>
 
+    </div>
+  </section>
+
+  <section class="band">
+    <p class="eyebrow">Как это работает</p>
+    <h2>Демо делаем бесплатно</h2>
+    <p>
+      Собираем сайт на ваших фотографиях и ценах, показываем вживую — и вы решаете.
+      <b>Ни к чему не обязывает.</b>
+    </p>
+    <dl class="steps">
+      <div><dt>Шаг 1</dt><dd>Берём фотографии, прайс и отзывы из вашей карточки и разбираем вручную — категории проставляются по просмотру каждого кадра.</dd></div>
+      <div><dt>Шаг 2</dt><dd>Собираем сайт и присылаем ссылку. Это черновик: фото, цены, тексты и цвета меняем как скажете.</dd></div>
+      <div><dt>Шаг 3</dt><dd>Если нравится — подключаем домен, настраиваем и выводим в поиск Яндекса и Гугла.</dd></div>
+    </dl>
+    <div class="acts">
+      <a class="solid" href="https://t.me/webe9">Написать в Telegram</a>
+      <a class="ghost" href="https://narodniy-team.ru">Сайт студии</a>
+      <a class="ghost" href="https://narodniy-team.ru/ai/">AI-ассистенты для салонов</a>
     </div>
   </section>
 </main>
 
-<footer class="wrap">
-  <div class="foot">
-    <div>
-      <h2 class="foot__t">Нужен такой же?</h2>
-      <p>
-        Собираем демо бесплатно на ваших фотографиях и ценах — смотрите вживую
-        и решайте. Дальше подключаем домен, настраиваем и выводим в поиск.
-      </p>
-    </div>
-    <div class="foot__l">
-      <a href="https://narodniy-team.ru">narodniy-team.ru — студия</a>
-      <a href="https://narodniy-team.ru/ai/">narodniy-team.ru/ai — AI-ассистенты</a>
-      <a href="https://t.me/webe9">Telegram: @webe9</a>
-    </div>
-    <p class="note">
+<footer class="foot">
+  <div class="foot__in">
+    <p class="foot__n">
       Фотографии, цены и отзывы на демо принадлежат самим студиям и взяты из их открытых
       карточек на Яндекс Картах. Страницы демонстрационные и не являются офертой.
+    </p>
+    <p>
+      <a href="https://narodniy-team.ru">narodniy-team.ru</a> · <a href="https://t.me/webe9">@webe9</a>
     </p>
   </div>
 </footer>
