@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Atelier Volos — наращивание волос в Сочи, Депутатская 10</title>
+<meta name="description" content="Ателье наращивания волос в Сочи: славянский срез premium от 40 до 75 см, капсульное и голливудское наращивание, работа в четыре руки. Рейтинг 5,0 на Яндекс Картах, 69 отзывов. Расчёт стоимости по прайсу студии.">
+<meta name="theme-color" content="#241812">
+<meta property="og:title" content="Atelier Volos — наращивание волос в Сочи">
+<meta property="og:description" content="Славянский срез premium 40–75 см, микрокапсулы, работа в четыре руки без доплат за скорость. 5,0 на Яндекс Картах.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23241812'/%3E%3Cg fill='%23EFE6D9'%3E%3Crect x='5' y='8' width='2' height='16'/%3E%3Crect x='11' y='8' width='2' height='9'/%3E%3Crect x='23' y='8' width='2' height='9'/%3E%3C/g%3E%3Crect x='17' y='6' width='2' height='20' fill='%238FB6D4'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Yeseva+One&family=Golos+Text:wght@400;500;600;700&family=Martian+Mono:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<a class="skip" href="#main">К содержанию</a>
+
+<header class="top" id="top">
+  <a class="top__mark" href="#top" aria-label="Atelier Volos, наверх">
+    <span class="top__markA">Atelier</span><span class="top__markB">volos</span>
+  </a>
+  <nav class="top__nav" aria-label="Разделы">
+    <a href="#methods">Техники</a>
+    <a href="#works">Работы</a>
+    <a href="#price">Прайс</a>
+    <a href="#merka">Расчёт</a>
+    <a href="#studio">Студия</a>
+  </nav>
+  <a class="top__cta" href="#book">Записаться</a>
+</header>
+
+<main id="main">
+
+<!-- ─── ПЕРВЫЙ ЭКРАН ────────────────────────────────────────── -->
+<section class="hero">
+  <div class="hero__text">
+    <p class="eyebrow">Сочи · Депутатская, 10 · с 2017 года</p>
+    <h1 class="hero__h1">Волосы, которые<br><em>не отличают</em> от своих</h1>
+    <p class="hero__lead">
+      Ателье наращивания в Сочи. Славянский срез под ваш цвет и длину, микрокапсулы,
+      работа в четыре руки — вдвое быстрее и без доплаты за скорость.
+    </p>
+
+    <div class="hero__acts">
+      <a class="btn btn--solid" href="#merka">Посчитать стоимость</a>
+      <a class="btn btn--ghost" href="#book">Записаться на консультацию</a>
+    </div>
+
+    <dl class="hero__stats" id="heroStats"></dl>
+  </div>
+
+  <figure class="hero__shot">
+    <img src="assets/photo/p044-1280.webp" alt="Клиентка прикладывает срез волос к своим, за спиной витрина со срезами" width="1280" height="2216" fetchpriority="high" decoding="async">
+    <figcaption>Подбор среза под цвет клиентки</figcaption>
+  </figure>
+</section>
+
+<!-- ─── ТЕХНИКИ ─────────────────────────────────────────────── -->
+<section class="sec sec--dark" id="methods">
+  <header class="sec__head">
+    <p class="eyebrow">Три способа</p>
+    <h2 class="h2">Техники наращивания</h2>
+    <p class="sec__sub">Отличаются креплением, ценой и тем, как потом делать коррекцию.</p>
+  </header>
+  <div class="methods" id="methodsList"></div>
+</section>
+
+<!-- ─── РАБОТЫ ──────────────────────────────────────────────── -->
+<section class="sec sec--wide" id="works">
+  <header class="sec__head">
+    <p class="eyebrow">129 кадров из студии</p>
+    <h2 class="h2">Работы, волосы и само ателье</h2>
+    <p class="sec__sub">Всё снято в студии на Депутатской. Нажмите на кадр, чтобы открыть крупно.</p>
+  </header>
+  <div class="filters" id="filters" role="tablist" aria-label="Разделы галереи"></div>
+  <div class="grid" id="grid"></div>
+  <div class="grid__more"><button class="btn btn--ghost" id="moreBtn">Показать ещё</button></div>
+</section>
+
+<!-- ─── ПРАЙС ───────────────────────────────────────────────── -->
+<section class="sec" id="price">
+  <header class="sec__head">
+    <p class="eyebrow">Прайс студии</p>
+    <h2 class="h2">Сколько стоит</h2>
+    <p class="sec__sub">Как опубликовано студией на Яндекс Картах. Диапазон зависит от длины и густоты волос.</p>
+  </header>
+  <div class="price" id="priceList"></div>
+
+  <div class="promos">
+    <h3 class="promos__t">Действующие предложения</h3>
+    <ul class="promos__l" id="promosList"></ul>
+  </div>
+</section>
+
+<!-- ─── МЕРКА: подпись студии ───────────────────────────────── -->
+<section class="merka" id="merka">
+  <div class="merka__in">
+
+    <header class="merka__head">
+      <p class="eyebrow eyebrow--light">Наряд-заказ</p>
+      <h2 class="h2 h2--light">Соберите свой расчёт</h2>
+      <p class="merka__sub">
+        В прайсе выше волосы считаются за 100 грамм, а работа мастера — за прядь.
+        Здесь эти две суммы складываются: выберите длину среза, вес волос и количество
+        прядей — и увидите, из чего получается цифра за визит.
+      </p>
+    </header>
+
+    <!-- лента -->
+    <div class="tape">
+      <div class="tape__label">
+        <span class="tape__cap">Длина среза</span>
+        <output class="tape__val" id="tapeVal">50 см</output>
+      </div>
+      <div class="tape__body">
+        <div class="tape__ruler" aria-hidden="true"></div>
+        <div class="tape__nums" id="tapeNums" aria-hidden="true"></div>
+        <div class="tape__mark" id="tapeMark" aria-hidden="true"></div>
+        <input class="tape__range" id="tapeRange" type="range" min="40" max="75" step="5" value="50"
+               aria-label="Длина среза в сантиметрах">
+      </div>
+      <p class="tape__note" id="tapeNote"></p>
+    </div>
+
+    <!-- переключатель техники -->
+    <div class="seg" role="tablist" aria-label="Техника наращивания">
+      <button class="seg__b is-on" role="tab" aria-selected="true" data-mode="capsule">Капсульное</button>
+      <button class="seg__b" role="tab" aria-selected="false" data-mode="hollywood">Голливудское</button>
+    </div>
+
+    <!-- две колонки наряда -->
+    <div class="slip">
+      <section class="slip__col">
+        <h3 class="slip__t"><span>Материал</span><small>славянский срез premium</small></h3>
+        <p class="slip__rate" id="matRate">28 000 ₽ за 100 г</p>
+        <label class="ctl">
+          <span class="ctl__cap">Сколько волос <output id="gramsVal">150 г</output></span>
+          <input id="grams" type="range" min="50" max="250" step="25" value="150" aria-label="Вес волос в граммах">
+        </label>
+        <p class="slip__sum" id="matSum">42 000 ₽</p>
+        <p class="slip__fine">Волосы остаются вашими — их носят через несколько коррекций.</p>
+      </section>
+
+      <section class="slip__col">
+        <h3 class="slip__t"><span>Работа</span><small id="workSub">капсульное наращивание</small></h3>
+
+        <div class="pick" id="pickTier">
+          <button class="pick__b is-on" data-tier="master">Мастер<small>от 4 лет</small></button>
+          <button class="pick__b" data-tier="top">Топ-мастер<small>от 7 лет</small></button>
+        </div>
+
+        <div id="capsuleCtl">
+          <p class="slip__rate" id="workRate">65 ₽ за прядь</p>
+          <label class="ctl">
+            <span class="ctl__cap">Сколько прядей <output id="strandsVal">120</output></span>
+            <input id="strands" type="range" min="40" max="200" step="10" value="120" aria-label="Количество прядей">
+          </label>
+        </div>
+
+        <div id="hollyCtl" hidden>
+          <p class="slip__rate" id="tressRate"></p>
+          <p class="ctl__cap ctl__cap--static">Сколько трессов</p>
+          <div class="pick pick--4" id="pickTress">
+            <button class="pick__b is-on" data-tress="1">1</button>
+            <button class="pick__b" data-tress="2">2</button>
+            <button class="pick__b" data-tress="3">3</button>
+            <button class="pick__b" data-tress="4">4</button>
+          </div>
+        </div>
+
+        <p class="slip__sum" id="workSum">7 800 ₽</p>
+        <p class="slip__fine" id="workFine">Мытьё головы, капсуляция, стрижка и укладка уже входят.</p>
+      </section>
+    </div>
+
+    <!-- итог -->
+    <div class="total">
+      <div class="total__num">
+        <span class="total__cap">Ориентир</span>
+        <strong id="totalSum">49 800 ₽</strong>
+        <span class="total__time" id="totalTime"></span>
+      </div>
+      <div class="total__acts">
+        <a class="btn btn--chalk" id="sendWa" href="#" target="_blank" rel="noopener">Отправить расчёт в WhatsApp</a>
+        <a class="btn btn--line" id="sendTg" href="#" target="_blank" rel="noopener">В Telegram</a>
+      </div>
+    </div>
+    <p class="merka__fine">
+      Это не счёт, а арифметика по опубликованному прайсу. Сколько именно грамм и прядей нужно
+      вам — мастер считает на <b>бесплатной консультации</b>, по вашей густоте и длине.
+    </p>
+  </div>
+</section>
+
+<!-- ─── ОТЗЫВЫ ──────────────────────────────────────────────── -->
+<section class="sec sec--wide" id="reviews">
+  <header class="sec__head">
+    <p class="eyebrow">5,0 на Яндекс Картах · 69 отзывов</p>
+    <h2 class="h2">Что пишут клиентки</h2>
+  </header>
+  <div class="aspects" id="aspects"></div>
+  <div class="revs" id="revsList"></div>
+  <p class="sec__after">
+    <a class="link" id="allReviews" href="#" target="_blank" rel="noopener">Все 69 отзывов на Яндекс Картах →</a>
+  </p>
+</section>
+
+<!-- ─── СТУДИЯ ──────────────────────────────────────────────── -->
+<section class="sec studio" id="studio">
+  <div class="studio__text">
+    <p class="eyebrow">Ателье</p>
+    <h2 class="h2">Место, куда возвращаются годами</h2>
+    <p>
+      Студия на Депутатской работает с 2017 года. Здесь не только наращивают: подбирают срез
+      по цвету и текстуре, красят, восстанавливают волосы после неудачного блонда и делают маникюр —
+      несколько процедур можно пройти за один визит.
+    </p>
+    <p>
+      Волосы держат в открытой витрине: срезы можно потрогать и приложить к своим,
+      прежде чем что-то решать. Консультация бесплатная и ни к чему не обязывает.
+    </p>
+    <ul class="comforts" id="comforts"></ul>
+    <h3 class="studio__mt">Мастера, которых называют в отзывах</h3>
+    <ul class="masters" id="mastersList"></ul>
+  </div>
+  <div class="studio__pics" id="studioPics"></div>
+</section>
+
+<!-- ─── КАК НАЙТИ ───────────────────────────────────────────── -->
+<section class="sec" id="where">
+  <header class="sec__head">
+    <p class="eyebrow">Как найти</p>
+    <h2 class="h2">Депутатская, 10</h2>
+    <p class="sec__sub" id="whereSub"></p>
+  </header>
+  <div class="way" id="way"></div>
+  <div class="mapwrap">
+    <iframe title="Ателье волос на карте: Сочи, Депутатская улица, 10" loading="lazy"
+      src="https://yandex.ru/map-widget/v1/org/atelier_volos/146799649318/?ll=39.73707%2C43.572297&z=17"></iframe>
+  </div>
+</section>
+
+<!-- ─── ЗАПИСЬ ──────────────────────────────────────────────── -->
+<section class="book" id="book">
+  <div class="book__in">
+    <p class="eyebrow eyebrow--light">Запись</p>
+    <h2 class="h2 h2--light">Начинается с консультации</h2>
+    <p class="book__sub">
+      Мастер смотрит вашу густоту и длину, подбирает срез и считает точную сумму.
+      Консультация бесплатная. Напишите — или выберите время в расписании студии.
+    </p>
+
+    <form class="form" id="form" novalidate>
+      <div class="form__row">
+        <label class="fld"><span>Как к вам обращаться</span>
+          <input id="fName" type="text" autocomplete="name" placeholder="Имя"></label>
+        <label class="fld"><span>Что интересует</span>
+          <select id="fWhat">
+            <option>Наращивание волос</option>
+            <option>Коррекция наращивания</option>
+            <option>Голливудское наращивание</option>
+            <option>Окрашивание</option>
+            <option>Уход для волос</option>
+            <option>Стрижка и укладка</option>
+            <option>Маникюр</option>
+            <option>Покупка волос</option>
+          </select></label>
+      </div>
+      <label class="fld"><span>Когда удобно</span>
+        <input id="fWhen" type="text" placeholder="Например: в субботу после 15:00"></label>
+      <label class="fld fld--chk">
+        <input id="fCalc" type="checkbox" checked>
+        <span>Приложить мой расчёт <b id="calcEcho"></b></span>
+      </label>
+      <div class="form__acts">
+        <button class="btn btn--chalk" type="submit" id="toWa">Написать в WhatsApp</button>
+        <a class="btn btn--line" id="toTg" href="#" target="_blank" rel="noopener">Написать в Telegram</a>
+      </div>
+      <p class="form__fine">
+        Кнопка открывает мессенджер с уже написанным сообщением — останется отправить.
+        Ничего никуда не уходит без вашего нажатия.
+      </p>
+    </form>
+
+    <div class="book__alt">
+      <a class="link link--light" id="bookYa" href="#" target="_blank" rel="noopener">Выбрать время в расписании студии →</a>
+      <a class="link link--light" id="bookTel" href="#">Позвонить: +7 (928) 234-98-38</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="foot__in">
+    <div class="foot__c">
+      <p class="foot__mark"><span>Atelier</span><span>volos</span></p>
+      <p class="foot__addr" id="footAddr"></p>
+    </div>
+    <div class="foot__c">
+      <h3>Связаться</h3>
+      <p><a href="#" id="footTel"></a></p>
+      <p><a href="#" id="footWa" target="_blank" rel="noopener">WhatsApp</a></p>
+      <p><a href="#" id="footTg" target="_blank" rel="noopener">Telegram</a></p>
+    </div>
+    <div class="foot__c">
+      <h3>Часы</h3>
+      <p id="footHours"></p>
+      <p><a href="#" id="footMaps" target="_blank" rel="noopener">Карточка на Яндекс Картах</a></p>
+    </div>
+  </div>
+  <p class="foot__legal" id="footLegal"></p>
+  <p class="foot__demo">
+    Демонстрационный сайт студии, собранный <a href="https://narodniy-team.ru" target="_blank" rel="noopener">Narodniy&nbsp;Team</a>
+    на открытых данных карточки в Яндекс Бизнесе. Фотографии, цены и отзывы принадлежат Atelier&nbsp;Volos.
+  </p>
+</footer>
+
+<div class="dock">
+  <a class="dock__b dock__b--main" href="#book">Записаться</a>
+  <a class="dock__b" id="dockWa" href="#" target="_blank" rel="noopener" aria-label="Написать в WhatsApp">WhatsApp</a>
+</div>
+
+<div class="lb" id="lb" hidden>
+  <button class="lb__x" id="lbX" aria-label="Закрыть">✕</button>
+  <button class="lb__nav lb__nav--p" id="lbP" aria-label="Предыдущее фото">‹</button>
+  <button class="lb__nav lb__nav--n" id="lbN" aria-label="Следующее фото">›</button>
+  <figure class="lb__f"><img id="lbImg" alt=""><figcaption id="lbCap"></figcaption></figure>
+</div>
+
+<script src="assets/js/data.js"></script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>

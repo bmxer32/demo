@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Arlett — студия красоты и косметологии в Воронеже, Олимпийский 6</title>
+<meta name="description" content="Студия красоты Arlett в Воронеже: лазерная эпиляция 17 зон, чистки и пилинги, аппаратная косметология, удаление татуажа, массаж. Рейтинг 5,0 на Яндекс Картах, 52 отзыва. Расчёт стоимости эпиляции по зонам.">
+<meta name="theme-color" content="#75172A">
+<meta property="og:title" content="Arlett — студия красоты в Воронеже">
+<meta property="og:description" content="Лазерная эпиляция, косметология и массаж на Олимпийском бульваре. 5,0 на Яндекс Картах, 52 отзыва.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%2375172A'/%3E%3Cpath d='M9 24 L16 8 L23 24 M12 19 H20' stroke='%23F7F5F2' stroke-width='2.4' fill='none' stroke-linecap='square'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;400;600&family=Literata:opsz,wght@7..72,400;7..72,500;7..72,600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<a class="skip" href="#main">К содержанию</a>
+
+<header class="top" id="top">
+  <a class="top__mark" href="#top" aria-label="Arlett, наверх">
+    <span class="top__markA">Arlett</span><span class="top__markB">студия красоты</span>
+  </a>
+  <nav class="top__nav" aria-label="Разделы">
+    <a href="#areas">Направления</a>
+    <a href="#zones">Эпиляция</a>
+    <a href="#results">До и после</a>
+    <a href="#price">Прайс</a>
+    <a href="#studio">Студия</a>
+  </nav>
+  <a class="top__cta" href="#book">Записаться</a>
+</header>
+
+<main id="main">
+
+<!-- ─── ПЕРВЫЙ ЭКРАН ────────────────────────────────────────── -->
+<section class="hero">
+  <div class="hero__text">
+    <p class="eyebrow">Воронеж · Олимпийский бульвар, 6</p>
+    <h1 class="hero__h1">Косметология,<br>где к вам<br><em>возвращаются</em></h1>
+    <p class="hero__lead">
+      Студия Антонины: лазерная эпиляция, уход за лицом и аппаратные процедуры.
+      Пятьдесят два отзыва, и почти в каждом — имя мастера.
+    </p>
+    <div class="hero__acts">
+      <a class="btn btn--solid" href="#zones">Посчитать эпиляцию</a>
+      <a class="btn btn--ghost" href="#book">Записаться</a>
+    </div>
+    <dl class="hero__stats" id="heroStats"></dl>
+  </div>
+  <figure class="hero__shot">
+    <img src="assets/photo/p034-1280.webp" alt="Косметолог студии Arlett во время процедуры" width="1280" height="853" fetchpriority="high" decoding="async">
+    <figcaption>Приём в студии на Олимпийском</figcaption>
+  </figure>
+</section>
+
+<!-- ─── НАПРАВЛЕНИЯ ─────────────────────────────────────────── -->
+<section class="sec sec--dark" id="areas">
+  <header class="sec__head">
+    <p class="eyebrow">Четыре направления</p>
+    <h2 class="h2">Чем здесь занимаются</h2>
+    <p class="sec__sub">Один мастер ведёт вас от чистки до лазера — программу собирают под кожу, а не по прайсу.</p>
+  </header>
+  <div class="areas" id="areasList"></div>
+</section>
+
+<!-- ─── КАРТА ЗОН: подпись студии ───────────────────────────── -->
+<section class="zones" id="zones">
+  <div class="zones__in">
+    <header class="zones__head">
+      <p class="eyebrow">Лазерная эпиляция</p>
+      <h2 class="h2">Отметьте зоны — увидите сумму</h2>
+      <p class="zones__sub">
+        Эпиляция считается по зонам, и почти никто не приходит за одной. Нажимайте на схеме
+        или в списке: сложим стоимость, время приёма и подставим комплект студии, если он дешевле.
+      </p>
+    </header>
+
+    <div class="zones__grid">
+      <div class="zmap">
+        <div class="seg" role="tablist" aria-label="Сторона тела">
+          <button class="seg__b is-on" role="tab" aria-selected="true" data-side="front">Спереди</button>
+          <button class="seg__b" role="tab" aria-selected="false" data-side="back">Сзади</button>
+        </div>
+        <svg class="zmap__svg" id="zmap" viewBox="0 0 300 560" role="group"
+             aria-label="Схема зон лазерной эпиляции"></svg>
+        <p class="zmap__cap" id="zmapCap" aria-live="polite">Схема условная: прямоугольники — зоны из прайса, не анатомия.</p>
+      </div>
+
+      <div class="zpick">
+        <h3 class="zpick__t">Все зоны</h3>
+        <div class="zpick__list" id="zoneList"></div>
+
+        <div class="zsum" id="zsum">
+          <p class="zsum__empty" id="zsumEmpty">Ничего не выбрано. Нажмите зону на схеме или в списке.</p>
+          <ul class="zsum__l" id="zsumList"></ul>
+          <p class="zsum__bundle" id="zsumBundle" hidden></p>
+          <div class="zsum__total">
+            <span class="zsum__cap">Итого за приём</span>
+            <strong id="zsumPrice">0 ₽</strong>
+            <span class="zsum__time" id="zsumTime"></span>
+          </div>
+          <div class="zsum__acts">
+            <a class="btn btn--wine" id="zsumWa" href="#" target="_blank" rel="noopener">Отправить в WhatsApp</a>
+            <a class="btn btn--line" id="zsumTg" href="#" target="_blank" rel="noopener">В Telegram</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="zones__fine">
+      Цены и длительность — из прайса студии на Яндекс Картах. Сколько понадобится процедур
+      и подойдёт ли лазер именно вам, мастер скажет на <b>консультации перед первым сеансом</b>.
+    </p>
+  </div>
+</section>
+
+<!-- ─── ДО И ПОСЛЕ ──────────────────────────────────────────── -->
+<section class="sec sec--wide" id="results">
+  <header class="sec__head">
+    <p class="eyebrow">Работы студии</p>
+    <h2 class="h2">До и после</h2>
+    <p class="sec__sub">Снимки студии, как они опубликованы на Яндекс Картах: без ретуши и без подписей о сроках.</p>
+  </header>
+  <div class="before" id="beforeGrid"></div>
+</section>
+
+<!-- ─── ПРАЙС ───────────────────────────────────────────────── -->
+<section class="sec" id="price">
+  <header class="sec__head">
+    <p class="eyebrow">Прайс студии</p>
+    <h2 class="h2">Сколько стоит</h2>
+    <p class="sec__sub">Как опубликовано студией на Яндекс Картах, с длительностью процедур.</p>
+  </header>
+  <div class="price" id="priceList"></div>
+</section>
+
+<!-- ─── ОТЗЫВЫ ──────────────────────────────────────────────── -->
+<section class="sec sec--wide" id="reviews">
+  <header class="sec__head">
+    <p class="eyebrow">5,0 на Яндекс Картах · 52 отзыва</p>
+    <h2 class="h2">Что пишут клиентки</h2>
+  </header>
+  <div class="aspects" id="aspects"></div>
+  <div class="revs" id="revsList"></div>
+  <p class="sec__after"><a class="link" id="allReviews" href="#" target="_blank" rel="noopener">Все 52 отзыва на Яндекс Картах →</a></p>
+</section>
+
+<!-- ─── СТУДИЯ ──────────────────────────────────────────────── -->
+<section class="sec studio" id="studio">
+  <div class="studio__text">
+    <p class="eyebrow">Студия</p>
+    <h2 class="h2">Кабинет на Олимпийском</h2>
+    <p>
+      Arlett — небольшая студия, где приём ведёт сама Антонина. Отсюда и тон отзывов:
+      людям отвечает не администратор, а мастер, который будет делать процедуру.
+    </p>
+    <p>
+      Аппаратная косметология требует техники и рук: диодный лазер, фотолечение,
+      микроигольчатый RF. Массаж ведёт отдельный мастер — Анна.
+    </p>
+    <h3 class="studio__mt">Кто принимает</h3>
+    <ul class="masters" id="mastersList"></ul>
+    <div class="gal">
+      <div class="filters" id="filters" role="tablist" aria-label="Разделы галереи"></div>
+      <div class="grid" id="grid"></div>
+    </div>
+  </div>
+  <div class="studio__pics" id="studioPics"></div>
+</section>
+
+<!-- ─── КАК НАЙТИ ───────────────────────────────────────────── -->
+<section class="sec" id="where">
+  <header class="sec__head">
+    <p class="eyebrow">Как найти</p>
+    <h2 class="h2">Олимпийский бульвар, 6</h2>
+    <p class="sec__sub" id="whereSub"></p>
+  </header>
+  <div class="way" id="way"></div>
+  <div class="mapwrap">
+    <iframe title="Arlett на карте: Воронеж, Олимпийский бульвар, 6" loading="lazy"
+      src="https://yandex.ru/map-widget/v1/org/arlet/94671764626/?ll=39.198607%2C51.712803&z=17"></iframe>
+  </div>
+</section>
+
+<!-- ─── ЗАПИСЬ ──────────────────────────────────────────────── -->
+<section class="book" id="book">
+  <div class="book__in">
+    <p class="eyebrow eyebrow--light">Запись</p>
+    <h2 class="h2 h2--light">Напишите — подберём процедуру</h2>
+    <p class="book__sub">
+      Перед лазером и любым курсом мастер уточняет тип кожи и противопоказания.
+      Напишите, что беспокоит, — ответит сама Антонина.
+    </p>
+
+    <form class="form" id="form" novalidate>
+      <div class="form__row">
+        <label class="fld"><span>Как к вам обращаться</span>
+          <input id="fName" type="text" autocomplete="name" placeholder="Имя"></label>
+        <label class="fld"><span>Что интересует</span>
+          <select id="fWhat">
+            <option>Лазерная эпиляция</option>
+            <option>Чистка лица</option>
+            <option>Пилинг</option>
+            <option>Аппаратная косметология</option>
+            <option>Удаление татуажа</option>
+            <option>Массаж</option>
+            <option>Наращивание ресниц</option>
+            <option>Не знаю, нужна консультация</option>
+          </select></label>
+      </div>
+      <label class="fld"><span>Когда удобно</span>
+        <input id="fWhen" type="text" placeholder="Например: в будни после 18:00"></label>
+      <label class="fld fld--chk">
+        <input id="fCalc" type="checkbox" checked>
+        <span>Приложить выбранные зоны <b id="calcEcho">— пока ничего не выбрано</b></span>
+      </label>
+      <div class="form__acts">
+        <button class="btn btn--wine" type="submit" id="toWa">Написать в WhatsApp</button>
+        <a class="btn btn--line" id="toTg" href="#" target="_blank" rel="noopener">Написать в Telegram</a>
+      </div>
+      <p class="form__fine">
+        Кнопка открывает мессенджер с уже написанным сообщением — останется отправить.
+        Ничего никуда не уходит без вашего нажатия.
+      </p>
+    </form>
+
+    <div class="book__alt">
+      <a class="link link--light" id="bookYa" href="#" target="_blank" rel="noopener">Выбрать время в расписании студии →</a>
+      <a class="link link--light" id="bookVk" href="#" target="_blank" rel="noopener">Группа во ВКонтакте →</a>
+      <a class="link link--light" id="bookTel" href="#">Позвонить: +7 (995) 251-10-50</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="foot__in">
+    <div class="foot__c">
+      <p class="foot__mark"><span>Arlett</span><span>студия красоты</span></p>
+      <p class="foot__addr" id="footAddr"></p>
+    </div>
+    <div class="foot__c">
+      <h3>Связаться</h3>
+      <p><a href="#" id="footTel"></a></p>
+      <p><a href="#" id="footWa" target="_blank" rel="noopener">WhatsApp</a></p>
+      <p><a href="#" id="footTg" target="_blank" rel="noopener">Telegram</a></p>
+      <p><a href="#" id="footVk" target="_blank" rel="noopener">ВКонтакте</a></p>
+    </div>
+    <div class="foot__c">
+      <h3>Приём</h3>
+      <p id="footHours"></p>
+      <p><a href="#" id="footMaps" target="_blank" rel="noopener">Карточка на Яндекс Картах</a></p>
+    </div>
+  </div>
+  <p class="foot__demo">
+    Демонстрационный сайт студии, собранный <a href="https://narodniy-team.ru" target="_blank" rel="noopener">Narodniy&nbsp;Team</a>
+    на открытых данных карточки на Яндекс Картах. Фотографии, цены и отзывы принадлежат Arlett.
+    Не является медицинской рекомендацией; у процедур есть противопоказания.
+  </p>
+</footer>
+
+<div class="dock">
+  <a class="dock__b dock__b--main" href="#book">Записаться</a>
+  <a class="dock__b" id="dockWa" href="#" target="_blank" rel="noopener">WhatsApp</a>
+</div>
+
+<div class="lb" id="lb" hidden>
+  <button class="lb__x" id="lbX" aria-label="Закрыть">✕</button>
+  <button class="lb__nav lb__nav--p" id="lbP" aria-label="Предыдущее фото">‹</button>
+  <button class="lb__nav lb__nav--n" id="lbN" aria-label="Следующее фото">›</button>
+  <figure class="lb__f"><img id="lbImg" alt=""><figcaption id="lbCap"></figcaption></figure>
+</div>
+
+<script src="assets/js/data.js"></script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>

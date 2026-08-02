@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Демо-сайты — Narodniy Team</title>
+<meta name="description" content="Демонстрационные сайты салонов красоты, собранные студией Narodniy Team на реальных данных заказчиков.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#141210">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23141210'/%3E%3Cpath d='M8 22V10l8 12V10' stroke='%23F3EFE9' stroke-width='2.4' fill='none'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#141210;--card:#1D1A17;--line:#332E28;--ink:#F3EFE9;--dim:#9A8F84;--acc:#D7B27A}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+       font:400 16px/1.6 Manrope,-apple-system,'Segoe UI',sans-serif;
+       -webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  .wrap{max-width:1080px;margin:0 auto;padding:clamp(40px,7vw,88px) clamp(18px,5vw,40px) 72px}
+  .eyebrow{font:400 11px/1.4 'JetBrains Mono',monospace;letter-spacing:.18em;
+           text-transform:uppercase;color:var(--acc);margin:0 0 16px}
+  h1{margin:0 0 18px;font:700 clamp(1.9rem,6vw,2.9rem)/1.14 Manrope;letter-spacing:-0.03em}
+  .lead{margin:0 0 8px;max-width:60ch;color:var(--dim);font-size:16.5px}
+  .grid{display:grid;gap:18px;margin-top:clamp(34px,5vw,52px)}
+  .card{display:block;text-decoration:none;background:var(--card);
+        border:1px solid var(--line);border-radius:4px;overflow:hidden;
+        transition:border-color .18s,transform .18s}
+  .card:hover{border-color:var(--acc);transform:translateY(-2px)}
+  .card img{width:100%;aspect-ratio:16/9;object-fit:cover;object-position:top;display:block;
+            border-bottom:1px solid var(--line)}
+  .card__b{padding:20px 22px 24px}
+  .card__t{margin:0 0 6px;font:700 1.2rem/1.25 Manrope;letter-spacing:-0.02em}
+  .card__c{margin:0 0 12px;font:400 11px/1.4 'JetBrains Mono',monospace;
+           letter-spacing:.1em;text-transform:uppercase;color:var(--acc)}
+  .card__d{margin:0;color:var(--dim);font-size:14.5px;line-height:1.6}
+  .foot{margin-top:56px;padding-top:26px;border-top:1px solid var(--line);
+        color:var(--dim);font-size:14px}
+  .foot a{color:var(--acc);text-decoration:none;border-bottom:1px solid currentColor}
+  .foot a:hover{color:var(--ink)}
+  @media(min-width:760px){.grid{grid-template-columns:repeat(3,1fr)}}
+  @media(prefers-reduced-motion:reduce){.card{transition:none}.card:hover{transform:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <p class="eyebrow">Narodniy Team</p>
+  <h1>Демо-сайты салонов</h1>
+  <p class="lead">
+    Каждый собран на реальных данных заказчика: его фотографии, его прайс, его отзывы.
+    Ни одной стоковой картинки и ни одной выдуманной цены.
+  </p>
+  <p class="lead">Это черновики — на них показываем, как может выглядеть сайт студии.</p>
+
+  <div class="grid">
+    <a class="card" href="arlett/">
+      <img src="arlett/docs/preview.png" alt="Первый экран сайта Arlett" loading="lazy">
+      <div class="card__b">
+        <p class="card__c">Воронеж · косметология</p>
+        <h2 class="card__t">Arlett</h2>
+        <p class="card__d">Карта зон лазерной эпиляции: отмечаете участки — видите стоимость и время приёма.</p>
+      </div>
+    </a>
+    <a class="card" href="atelier/">
+      <img src="atelier/docs/preview.png" alt="Первый экран сайта Atelier Volos" loading="lazy">
+      <div class="card__b">
+        <p class="card__c">Сочи · наращивание волос</p>
+        <h2 class="card__t">Atelier Volos</h2>
+        <p class="card__d">Расчёт по сантиметровой ленте: длина среза, вес волос и работа мастера складываются в сумму за визит.</p>
+      </div>
+    </a>
+    <a class="card" href="koko/">
+      <img src="koko/docs/preview.png" alt="Первый экран сайта KOKO Studio" loading="lazy">
+      <div class="card__b">
+        <p class="card__c">Москва · брови и ресницы</p>
+        <h2 class="card__t">KOKO Studio</h2>
+        <p class="card__d">Шкала объёма 1D–5D и онлайн-запись в рабочем расписании студии.</p>
+      </div>
+    </a>
+  </div>
+
+  <p class="foot">
+    Сайты и автоматизация под ключ — <a href="https://narodniy-team.ru">narodniy-team.ru</a>.
+    AI-ассистенты для салонов — <a href="https://narodniy-team.ru/ai/">narodniy-team.ru/ai</a>.
+    Фотографии, цены и отзывы на демо принадлежат самим студиям.
+  </p>
+</div>
+</body>
+</html>
