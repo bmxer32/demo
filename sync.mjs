@@ -12,6 +12,7 @@ const SITES = [
   { from: 'arlet', to: 'arlett' },
   { from: 'atelier-volos', to: 'atelier' },
   { from: 'koko-studio', to: 'koko' },
+  { from: 'lingostars', to: 'lingostars' },
 ];
 /* что копируем: сайт без оригиналов фото и служебных скриптов */
 const TAKE = ['index.html', '.nojekyll', 'assets/css', 'assets/js', 'assets/photo', 'docs/preview.png'];
