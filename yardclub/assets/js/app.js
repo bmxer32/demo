@@ -165,6 +165,29 @@
     });
   }
 
+  /* ---------- полоска под шапкой при прокрутке ---------- */
+  // Слушатель пассивный и через requestAnimationFrame: обработчик
+  // скролла, который трогает стили напрямую, тормозит прокрутку.
+
+  var hdr = document.querySelector(".hdr");
+
+  if (hdr) {
+    var ticking = false;
+
+    function syncHeader() {
+      hdr.classList.toggle("is-scrolled", window.scrollY > 4);
+      ticking = false;
+    }
+
+    window.addEventListener("scroll", function () {
+      if (ticking) return;
+      ticking = true;
+      window.requestAnimationFrame(syncHeader);
+    }, { passive: true });
+
+    syncHeader(); // страницу могли открыть уже прокрученной
+  }
+
   /* ---------- форма записи ---------- */
   // Бэкенда у клуба нет: собираем текст и открываем WhatsApp.
 

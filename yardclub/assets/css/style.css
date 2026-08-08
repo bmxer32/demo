@@ -50,7 +50,7 @@ img { max-width: 100%; display: block; }
 a { color: inherit; }
 
 .wrap { width: min(100% - (var(--gutter) * 2), var(--wrap)); margin-inline: auto; }
-section { padding-block: var(--step); }
+section { padding-block: var(--step); scroll-margin-top: 66px; }
 .band { background: var(--band); }
 .wine { background: var(--wine); color: #f4ece4; }
 .wine h2, .wine h3 { color: #fff; }
@@ -106,7 +106,17 @@ h3 { font-size: clamp(21px, 2.4vw, 27px); }
 
 /* ---------- шапка ---------- */
 
-.hdr { background: var(--wine); color: #f4ece4; }
+/* Шапка едет за прокруткой. Полоска снизу появляется только когда
+   страницу тронули: на самом верху она лишняя, шапка и так упирается
+   в фотографию. Тень внутренняя, а не border — иначе в момент
+   появления линии контент дёргается на пиксель вниз. */
+.hdr {
+  position: sticky; top: 0; z-index: 60;
+  background: var(--wine); color: #f4ece4;
+  box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0);
+  transition: box-shadow .22s ease;
+}
+.hdr.is-scrolled { box-shadow: inset 0 -1px 0 rgba(255, 255, 255, .6); }
 .hdr-in { display: flex; align-items: center; gap: 20px; height: 66px; }
 .mark { display: flex; align-items: center; gap: 12px; text-decoration: none; margin-right: auto; }
 .mark img { width: 34px; height: 34px; object-fit: contain; background: #fff; border-radius: 50%; padding: 3px; }
@@ -233,6 +243,47 @@ h3 { font-size: clamp(21px, 2.4vw, 27px); }
 .who-c { border-top: 2px solid var(--wine); padding-top: 20px; }
 .who-c h3 { margin-bottom: 10px; }
 .who-c p { margin: 0; color: var(--ink-60); font-size: 16px; }
+
+/* ---------- разговорный клуб: пригласительный билет ----------
+   Раньше здесь было пустое бордовое поле в тысячу пикселей с одинокой
+   кнопкой посередине. Теперь то же предложение, но с конкретикой:
+   цена слева, условия справа, всё внутри одной карточки. */
+
+.ticket {
+  display: grid; grid-template-columns: auto 1fr;
+  gap: clamp(24px, 4vw, 56px); align-items: center;
+  max-width: 800px; margin-inline: auto;
+  background: var(--paper); color: var(--ink);
+  border-radius: var(--r); padding: clamp(26px, 3.4vw, 40px);
+}
+@media (max-width: 700px) { .ticket { grid-template-columns: 1fr; gap: 24px; } }
+
+.ticket-price { text-align: center; padding-right: clamp(0px, 2vw, 24px); }
+@media (min-width: 701px) { .ticket-price { border-right: 1px dashed rgba(42, 28, 34, .28); } }
+.ticket-crest {
+  width: 44px; height: 44px; object-fit: contain;
+  margin: 0 auto 14px; display: block;
+}
+.ticket-price b {
+  display: block; font-family: var(--display); font-weight: 400;
+  font-size: clamp(44px, 5.4vw, 62px); line-height: 1; color: var(--wine);
+}
+.ticket-price span {
+  display: block; margin-top: 8px;
+  font-family: var(--mono); font-size: 11px; letter-spacing: .16em;
+  text-transform: uppercase; color: var(--ink-40);
+}
+
+.ticket-list { margin: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 0 clamp(20px, 3vw, 40px); }
+@media (max-width: 560px) { .ticket-list { grid-template-columns: 1fr; } }
+.ticket-list > div { padding: 12px 0; border-bottom: 1px solid var(--rule); }
+.ticket-list dt {
+  font-family: var(--mono); font-size: 10.5px; letter-spacing: .13em;
+  text-transform: uppercase; color: var(--ink-40); margin-bottom: 3px;
+}
+.ticket-list dd { margin: 0; font-size: 16px; }
+
+.ticket-cta { text-align: center; margin-top: clamp(28px, 3.4vw, 40px); }
 
 /* ---------- отзывы ---------- */
 
