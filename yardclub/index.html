@@ -49,17 +49,9 @@
 
   <!-- ═══ ПЕРВЫЙ ЭКРАН: ФОТО ВО ВСЮ ШИРИНУ ═══ -->
   <section class="hero">
-    <div class="hero-photo">
-      <picture>
-        <source srcset="assets/photo/lesson.webp" type="image/webp">
-        <img src="assets/photo/lesson.jpg" width="1600" height="1067"
-             alt="Занятие в Ярдъ Клубе: три ученицы за отдельными столами и преподаватель с карточками">
-      </picture>
-      <span class="hero-cap">Наш класс на Волжской</span>
-    </div>
-
-    <div class="wrap">
-      <div class="hero-card">
+    <div class="hero-panel">
+      <div class="hero-panel-in">
+        <img class="hero-crest" src="assets/photo/crest.webp" alt="" width="52" height="52">
         <p class="eyebrow">Сочи · Мамайка · Волжская, 70</p>
         <h1>Клуб, где за столом<br>вас не больше четверых</h1>
         <p class="hero-sub">
@@ -68,11 +60,20 @@
           чтобы говорить на каждом занятии, а не слушать соседа.
         </p>
         <div class="hero-cta">
-          <a class="btn btn-solid" href="#book">Записаться на пробное</a>
-          <a class="btn btn-line" href="#table">Посмотреть форматы</a>
+          <a class="btn btn-light" href="#book">Записаться на пробное</a>
+          <a class="btn btn-ghost" href="#table">Посмотреть форматы</a>
         </div>
       </div>
     </div>
+
+    <figure class="hero-photo">
+      <picture>
+        <source srcset="assets/photo/lesson.webp" type="image/webp">
+        <img src="assets/photo/lesson.jpg" width="1600" height="1067"
+             alt="Занятие в Ярдъ Клубе: три ученицы за отдельными столами и преподаватель с карточками">
+      </picture>
+      <figcaption>Наш класс на Волжской</figcaption>
+    </figure>
   </section>
 
   <!-- ═══ ЛЕНТА ФАКТОВ ═══ -->
